@@ -132,22 +132,31 @@ class Ex6{
 	}
 
 	public void ex6_10(int [] a, int [] b){
-if (a.length <= b.length) {
-			int [] c = new int[a.length];
-			for (int i = 0; i < a.length; i++) {
-				c[i] = a[i];
-				a[i] = b[i];
-				b[i] = c[i];
-			}
-		} if (b.length < a.length) {
-			int[] d = new int[b.length];
-			for (int k = 0; k < b.length; k++) {
-				d[k] = b[k];	
-				b[k] = a[k];
-				a[k] = d[k];
-			}
-		}		
-		return;
+        int [] seta = new int[a.length];
+        int [] setb = new int[b.length];
+        int count = 0;
+        for(int i:a){
+         seta[count] = i;
+         count += 1;
+        }
+        count = 0;
+        for(int i:b){
+         setb[count] = i;
+         count += 1;
+        }
+        if(a.length > b.length){
+         for(int i = 0;i < b.length;i++){
+          a[i] = setb[i];
+          b[i] = seta[i];
+         }
+        }else{
+         for(int i = 0;i < a.length;i++){
+          a[i] = setb[i];
+          b[i] = seta[i];
+         }
+
+        }
+        return;
 	}
 
 
